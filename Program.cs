@@ -187,3 +187,41 @@ for (int i = 0; i < length; i++)
 {
     Console.WriteLine(intArray[i]);
 }
+
+// Searching For A Value In An Array With Linear Search:
+
+// Now that we have created an array, inserted values into the array, and deleted
+// values lets try using an algorithm to search for a value in the array. Linear
+// searches are the easiest search algorithm and very commonly used in real world
+// environments. It works by first iterating through the array with a for loop and
+// then using an if statement to see if the value that is currently being looked at
+// is the value that we are searching for.
+
+// This is a bool function so it has to have the return type of true or false. This
+// bool function is called LinearSearch and takes in our intArray and an integer
+// variable called key. The key variable represents the value that we are searching
+// for in the array.
+bool LinearSearch(int[] intArray, int key)
+{
+    // This for loop iterates through array to the extent of the length variable (7).
+    for (int i = 0; i < length; i++)
+    {
+        // This if statement compares each variable of the array to the key. If the
+        // variable that we are searching for or the key is found in the array then
+        // true will be returned to the console.
+        if (intArray[i] == key)
+        {
+            return true;
+        }
+    }
+    // This return false condition will only happen if the function iterates
+    // through the whole array and never fulfills the condition of one of the
+    // values of the array being equal to the key variable or the variable that
+    // we are searching for.
+    return false;
+}
+
+// This line not only calls the function but it also writes the result of the
+// function to the console. This is also where we put our array and key value into
+// the function as arguments.
+Console.WriteLine(LinearSearch(intArray, 5));
